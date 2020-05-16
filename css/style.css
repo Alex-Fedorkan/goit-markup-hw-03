@@ -551,8 +551,8 @@ header a[href='mailto:info@devstudio.com'] {
   margin: 0;
   padding-top: 63px;
   padding-bottom: 63px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 23px;
+  padding-right: 23px;
   font-size: 18px;
   line-height: 1.56;
   color: var(--secondary-text-color);
@@ -564,8 +564,8 @@ header a[href='mailto:info@devstudio.com'] {
 .portfolio .title {
   margin-top: 0;
   margin-bottom: 4px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 23px;
+  padding-right: 23px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -575,8 +575,8 @@ header a[href='mailto:info@devstudio.com'] {
 .portfolio .text {
   margin-top: 0;
   margin-bottom: 20px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 23px;
+  padding-right: 23px;
   font-size: 16px;
   line-height: 1.87;
   color: var(--primary-text-color);
