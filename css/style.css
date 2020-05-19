@@ -42,8 +42,14 @@ body {
   background-color: var(--primary-bg-color);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
-  width: 1230px;
+  width: 1200px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -58,6 +64,10 @@ body {
 
 .link {
   text-decoration: none;
+}
+
+.title {
+  color: var(--title-text-color);
 }
 
 /* Header */
@@ -84,6 +94,10 @@ body {
   color: var(--accent-color);
 }
 
+.header .logo {
+  margin-right: 85px;
+}
+
 .site-nav {
   display: flex;
 
@@ -92,30 +106,22 @@ body {
   letter-spacing: 0.02em;
 }
 
-.title {
-  color: var(--title-text-color);
-}
-
-.site-nav {
-  margin-left: 86px;
-}
-
 .site-nav > li:not(:last-child) {
   margin-right: 50px;
 }
 
 .site-nav .link {
   display: block;
-  padding: 30px 5px;
+  padding: 32px 5px;
 
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
 
-  border-bottom-width: 2px;
+  border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: var(--accent-color);
 }
@@ -157,12 +163,16 @@ header a[href='mailto:info@devstudio.com'] {
 
   text-align: center;
 
-  background-color: var(--secondary-bg-color);
+  background-image: url(../images/hero-bcg.png);
+  background-color: #2f303a;
+  background-blend-mode: overlay;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 
 .hero {
   margin-top: 0;
-  margin-bottom: 46px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   max-width: 646px;
@@ -188,17 +198,35 @@ header a[href='mailto:info@devstudio.com'] {
 
   background-color: var(--accent-color);
   border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.advantages,
+.works,
+.team,
+.regulars,
+.portfolio {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /* Преимущества */
 
-.advantages {
-  padding-top: 94px;
-}
-
 .advantages h2 {
   /* margin: 0; */
   display: none;
+}
+
+.advantages .list {
+  display: flex;
+}
+
+.advantages .item {
+  width: calc((100%-90px) / 4);
+}
+
+.advantages .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .advantages .bcg {
@@ -233,18 +261,6 @@ header a[href='mailto:info@devstudio.com'] {
   text-transform: uppercase;
 }
 
-.advantages .list {
-  display: flex;
-}
-
-.advantages .item {
-  width: calc((100%-90px) / 4);
-}
-
-.advantages .item:not(:last-child) {
-  margin-right: 30px;
-}
-
 .advantages .text {
   margin: 0;
 
@@ -265,29 +281,17 @@ header a[href='mailto:info@devstudio.com'] {
 
 /* Профиль работ */
 
-.works,
-.team,
-.regulars,
-.portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.works img {
-  display: block;
-}
-
-.works h3 {
-  margin: 0;
-  padding: 0;
-}
-
 .works .list {
   display: flex;
 }
 
 .works .item:not(:last-child) {
   margin-right: 30px;
+}
+
+.works h3 {
+  margin: 0;
+  padding: 0;
 }
 
 .cases {
@@ -318,10 +322,14 @@ header a[href='mailto:info@devstudio.com'] {
 }
 
 .team-item {
-  width: 278px;
+  width: calc((100%-90px) / 4);
 
   background-color: var(--primary-bg-color);
   border-radius: 4px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
 }
 
 .team-item:not(:last-child) {
@@ -391,12 +399,19 @@ header a[href='mailto:info@devstudio.com'] {
   display: flex;
 }
 
+.regulars .item {
+  width: calc((100%-150px) / 6);
+}
+
 .regulars .item:not(:last-child) {
   margin-right: 30px;
 }
 
 .regulars-link {
-  display: block;
+  display: flex;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
 
   color: #afb1b8;
 
@@ -441,7 +456,7 @@ header a[href='mailto:info@devstudio.com'] {
 }
 
 .footer-address {
-  display: inline-block;
+  margin-top: 0;
   margin-bottom: 9px;
 
   font-style: normal;
@@ -450,6 +465,8 @@ header a[href='mailto:info@devstudio.com'] {
 }
 
 .address-box > address {
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
 }
 
@@ -513,14 +530,13 @@ header a[href='mailto:info@devstudio.com'] {
 .link[aria-current] {
   color: var(--accent-color);
 
-  border-bottom-width: 2px;
+  border-bottom-width: 4px;
   border-bottom-style: solid;
   border-bottom-color: var(--accent-color);
 }
 
 .portfolio h1 {
   display: none;
-  /* margin: 0; */
 }
 
 .filter-box {
@@ -551,13 +567,8 @@ header a[href='mailto:info@devstudio.com'] {
 .portfolio-filter:focus {
   color: var(--secondary-text-color);
   background-color: var(--accent-color);
-}
-
-.portfolio img {
-  display: block;
-  margin-bottom: 20px;
-
-  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio .list {
@@ -567,15 +578,32 @@ header a[href='mailto:info@devstudio.com'] {
 }
 
 .portfolio .item {
-  width: 380px;
+  width: calc((100% - 90px) / 3);
+  /* width: 370px; */
   margin: 15px;
 
-  border: 1px solid #eeeeee;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+}
+
+.portfolio .link {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.down-part {
+  padding: 20px 24px;
+
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .portfolio .item:hover {
-  border: 1px solid #eeeeee;
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
@@ -601,8 +629,6 @@ header a[href='mailto:info@devstudio.com'] {
 .portfolio .title {
   margin-top: 0;
   margin-bottom: 4px;
-  padding-left: 23px;
-  padding-right: 23px;
 
   font-weight: 700;
   font-size: 18px;
@@ -612,9 +638,7 @@ header a[href='mailto:info@devstudio.com'] {
 
 .portfolio .text {
   margin-top: 0;
-  margin-bottom: 20px;
-  padding-left: 23px;
-  padding-right: 23px;
+  margin-bottom: 0px;
 
   font-size: 16px;
   line-height: 1.87;
